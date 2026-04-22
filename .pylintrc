@@ -1,0 +1,34 @@
+[MASTER]
+# Directorios que Pylint debe ignorar
+ignore=venv,migrations
+
+# Extensiones de archivos que se analizarán
+extension-pkg-whitelist=
+
+[MESSAGES CONTROL]
+# Desactiva advertencias específicas (ejemplo: falta de docstring)
+disable=C0114,C0115,C0116,E0015,E0602,C0303,C0103
+
+[REPORTS]
+# Controla si se muestra el reporte final de puntuación
+reports=no
+
+[FORMAT]
+# Número máximo de caracteres por línea
+max-line-length=100
+
+[DESIGN]
+# Número máximo de argumentos permitidos en una función
+max-args=5
+# Número máximo de atributos permitidos en una clase
+max-attributes=10
+
+[IMPORTS]
+# Permite imports relativos
+allow-relative-imports=yes
+
+[NAMING]
+# Convenciones de nombres
+variable-rgx=[a-z_][a-z0-9_]{0,30}$
+function-rgx=[a-z_][a-z0-9_]{0,30}$
+class-rgx=[A-Z][a-zA-Z0-9]+$

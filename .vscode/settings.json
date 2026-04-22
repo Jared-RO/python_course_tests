@@ -1,0 +1,23 @@
+{
+    "python.formatting.provider": "black",
+    "editor.formatOnSave": true,
+    "editor.rulers": [
+        {
+            "color": "#90EE90",
+            "column": 110,
+            "lineStyle": "dashed"
+        }
+    ],
+    "python.formatting.blackArgs": [
+        "--config ${workspaceFolder}/.black.toml"
+    ],
+    "[python]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit",
+            "source.fixAll": "explicit"
+        }
+    },
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.mypyEnabled": true
+}

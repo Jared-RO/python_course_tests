@@ -1,0 +1,5 @@
+[black]
+line-length = 110 
+exclude = [
+    "venv"
+]
