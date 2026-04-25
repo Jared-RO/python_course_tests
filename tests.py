@@ -134,7 +134,8 @@ Juan = Person(name="Juan", age=25)
 
 semitherian = stud[
     Animal, Person
-](  # creamos una instancia de student usando el tipo animal como argumento para el tipo genérico T
+](  # creamos una instancia de student usando el tipo animal como argumento para el
+    #   tipo genérico T
     name="David",
     age=22,
     position=Posicion(x=1.0, y=2.0, z=3.0),
