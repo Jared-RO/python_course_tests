@@ -3,15 +3,8 @@ from __future__ import (
 )
 
 # para permitir referencias a clases que aún no han sido definidas sin usar ""
-from typing import (TypedDict,
-    TypeVar,
-    Generic,
-    List,
-    NamedTuple,
-    Optional
-)
+from typing import TypedDict, TypeVar, Generic, List, NamedTuple, Optional
 from dataclasses import dataclass
-
 
 
 class Person(TypedDict):
@@ -92,6 +85,7 @@ class Student(
 @dataclass
 class Animal:
     animal_kingdom: Optional[str | None]
+
 
 jirafa = Animal(animal_kingdom="mamifero")
 tigre = Animal(animal_kingdom="felino")
