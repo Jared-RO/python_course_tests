@@ -3,8 +3,15 @@ from __future__ import (
 )
 
 # para permitir referencias a clases que aún no han sido definidas sin usar ""
-from typing import TypedDict, TypeVar, Generic, List, NamedTuple
+from typing import (TypedDict,
+    TypeVar,
+    Generic,
+    List,
+    NamedTuple,
+    Optional
+)
 from dataclasses import dataclass
+
 
 
 class Person(TypedDict):
@@ -81,12 +88,13 @@ class Student(
     ]  # usamos el tipo genérico T para definir el tipo de la lista de partners
 
 
-class Animal: ...  # definimos una clase animal sin atributos ni métodos, solo para usarla como tipo genérico
+# definimos una clase animal sin atributos ni métodos, solo para usarla como tipo genérico
+@dataclass
+class Animal:
+    animal_kingdom: Optional[str | None]
 
-
-jirafa = Animal()
-tigre = Animal()  # creamos dos instancias de animal, una para jirafa y otra para tigre
-
+jirafa = Animal(animal_kingdom="mamifero")
+tigre = Animal(animal_kingdom="felino")
 therian = Student[
     Animal
 ](  # creamos una instancia de student usando el tipo animal como argumento para el tipo genérico T
@@ -125,8 +133,8 @@ class stud(
 
 
 # creamos dos animales diferentes para usar como tipos genéricos
-Gato = Animal()
-Perro = Animal()  # creamos dos instancias de animal, una para jirafa y otra para tigre
+Gato = Animal(animal_kingdom="felino")
+Perro = Animal(animal_kingdom="canino")
 
 # creamos dos personas diferentes para usar como tipos genéricos
 Miguel = Person(name="Miguel", age=30)
@@ -134,8 +142,7 @@ Juan = Person(name="Juan", age=25)
 
 semitherian = stud[
     Animal, Person
-](  # creamos una instancia de student usando el tipo animal como argumento para el
-    #   tipo genérico T
+](  # creamos una instancia de student usando el tipo animal como argumento para el tipo genérico T
     name="David",
     age=22,
     position=Posicion(x=1.0, y=2.0, z=3.0),
