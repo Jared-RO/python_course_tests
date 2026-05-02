@@ -151,6 +151,7 @@ semitherian = stud[
 )
 print(semitherian)
 
+print("-----------------------------")
 
 ############ como usar GENERiCS con un tipo genérico que puede ser diferentes clases
 # T = TypeVar(
