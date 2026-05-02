@@ -1,6 +1,7 @@
 name: Pre-commit checks
 
-on: [push]
+on:
+  pull request:
 
 jobs:
   build:
